@@ -16,3 +16,5 @@ public:
 	void setName(std::string _name);
 
 };
+
+#endif
