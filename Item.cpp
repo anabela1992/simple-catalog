@@ -1,28 +1,19 @@
+#include "Item.h"
 #include <iostream>
-#include <string>
 
-class Item {
-private:
-	int id;
-	std::string name;
+Item::Item(int _id, std::string _name){
+	id = _id;
+	name = _name;
+}
 
-public:
-	Item(int _id, std::string _name){
-		id = _id;
-		name = _name;
-	}
+int Item::getId(){
+	return id;
+}
 
-	~Item();
+std::string Item::getName(){
+	return name;
+}
 
-	int getId(){
-		return id;
-	}
-
-	std::string getName(){
-		return name;
-	}
-
-	void setName(std::string _name){
-		name = _name;
-	}
-};
+void Item::setName(std::string _name){
+	name = _name;
+}
