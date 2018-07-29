@@ -1,54 +1,40 @@
 #include <iostream>
 #include <string>
-#include <Item.h>
+#include "Item.h"
+#include "Book.h"
 
-class Book : public Item{
-private:
-	std::string author;
-	bool saga;
-	std::string sagaName;
-	int sagaVolume;
-	std::string genre;
+Book(std::string _author, bool _saga, std::string _sagaName,
+	int _sagaVolume, std::string _genre) : Item(int _id, std::string _name){
 
-public:
-	Book(std::string _author, bool _saga, std::string _sagaName,
-		int _sagaVolume, std::string _genre) : Item(int _id, std::string _name){
-
-		author = _author;
-		saga = _saga;
-		if(saga){
-			sagaName = _sagaName;
-			sagaVolume = sagaVolume;
-		}else{
-			sagaName = NULL;
-			sagaVolume = NULL;
-		}
-		genre = _genre;
-		
-	};
-
-	~Book();
-
-
-	std::string getAuthor(){
-		return author;
+	author = _author;
+	saga = _saga;
+	if(saga){
+		sagaName = _sagaName;
+		sagaVolume = sagaVolume;
+	}else{
+		sagaName = NULL;
+		sagaVolume = NULL;
 	}
+	genre = _genre;
+}
 
-	bool isSaga(){
-		return saga;
-	}
 
-	std::string getSagaName(){
-		return sagaName;
-	}
+std::string Book::getAuthor(){
+	return author;
+}
 
-	int getSagaVolume(){
-		return sagaVolume;
-	}
+bool Book::isSaga(){
+	return saga;
+}
 
-	std::string getGenre(){
-		return genre;
-	}
+std::string Book::getSagaName(){
+	return sagaName;
+}
 
-	
-};
+int Book::getSagaVolume(){
+	return sagaVolume;
+}
+
+std::string Book::getGenre(){
+	return genre;
+}
